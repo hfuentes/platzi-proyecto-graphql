@@ -1,0 +1,6 @@
+{
+  "name": "platzi-proyecto-graphql",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
