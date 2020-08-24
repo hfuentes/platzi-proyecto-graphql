@@ -40,9 +40,7 @@ module.exports.typeDefs = gql`
 
 module.exports.resolvers = {
     Query: {
-        cursos: () => [{
-            id: 1, titulo: "Curso Ejemplo", descripcion: "ASD123"
-        }],
+        cursos: () => [{ id: 1, titulo: "Curso Ejemplo", descripcion: "ASD123" }, { id: 1, titulo: "Curso 22", descripcion: "ASD123" }],
         profesores: () => {
             return new Promise((resolve, reject) => {
                 return resolve([{
@@ -50,6 +48,14 @@ module.exports.resolvers = {
                     nombre: 'Hector'
                 }])
             })
+        }
+    },
+    Curso: {
+        profesor: () => {
+            return {
+                id: 44,
+                nombre: 'Pablo'
+            }
         }
     }
 }
