@@ -1,7 +1,10 @@
 const { gql } = require('apollo-server-express')
 const casual = require('casual')
+const Curso = require('./models/Curso')
+const Profesor = require('./models/Profesor')
+const Comentario = require('./models/Comentario')
 
-const SHOW_MOCKS = true
+const SHOW_MOCKS = false
 
 const typeDefs = gql`
     type Curso {
@@ -38,26 +41,10 @@ const typeDefs = gql`
 
 const resolvers = {
     Query: {
-        cursos: () => [{ id: 1, titulo: "Curso Ejemplo", descripcion: "ASD123" }, { id: 1, titulo: "Curso 22", descripcion: "ASD123" }],
-        profesores: () => {
-            return new Promise((resolve, reject) => {
-                return resolve([{
-                    id: 99,
-                    nombre: 'Hector'
-                }])
-            })
-        }
-    },
-    Curso: {
-        profesor: () => ({
-            id: 44,
-            nombre: 'Pablo'
-        }),
-        comentarios: () => ([{
-            id: 33,
-            nombre: "asd",
-            cuerpo: "asdasdasd"
-        }])
+        cursos: () => Curso.query().eager('[profesor, comentarios]'),
+        profesores: () => Profesor.query().eager('cursos'),
+        curso: (rootValue, args) => Curso.query().findById(args.id).eager('[profesor, comentarios]'),
+        profesor: (rootValue, args) => Profesor.query().findById(args.id).eager('cursos')
     }
 }
 

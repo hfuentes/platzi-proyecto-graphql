@@ -3,6 +3,8 @@ const bodyParser = require('body-parser')
 const { ApolloServer } = require('apollo-server-express')
 const schema = require('./schema')
 
+require('./db/setup')
+
 const server = new ApolloServer(schema)
 const app = express()
 server.applyMiddleware({ app })
