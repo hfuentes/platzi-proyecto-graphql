@@ -1,6 +1,9 @@
 const { gql } = require('apollo-server-express')
+const casual = require('casual')
 
-module.exports.typeDefs = gql`
+const SHOW_MOCKS = true
+
+const typeDefs = gql`
 
     type Curso {
         id: ID!
@@ -38,7 +41,7 @@ module.exports.typeDefs = gql`
     }
 `
 
-module.exports.resolvers = {
+const resolvers = {
     Query: {
         cursos: () => [{ id: 1, titulo: "Curso Ejemplo", descripcion: "ASD123" }, { id: 1, titulo: "Curso 22", descripcion: "ASD123" }],
         profesores: () => {
@@ -51,11 +54,35 @@ module.exports.resolvers = {
         }
     },
     Curso: {
-        profesor: () => {
-            return {
-                id: 44,
-                nombre: 'Pablo'
-            }
-        }
+        profesor: () => ({
+            id: 44,
+            nombre: 'Pablo'
+        }),
+        comentarios: () => ([{
+            id: 33,
+            nombre: "asd",
+            cuerpo: "asdasdasd"
+        }])
     }
 }
+
+getMocks = (show) => {
+    if (!show) return false
+    return {
+        Curso: () => ({
+            titulo: casual.title,
+            descripcion: casual.description,
+            rating: casual.integer(from = 1, to = 10)
+        }),
+        Profesor: () => ({
+            nombre: casual.full_name,
+            nacionalidad: casual.country
+        }),
+        Comentario: () => ({
+            nombre: casual.full_name,
+            cuerpo: casual.sentences(n = 3)
+        })
+    }
+}
+
+module.exports = { typeDefs, resolvers, mocks: getMocks(SHOW_MOCKS) }

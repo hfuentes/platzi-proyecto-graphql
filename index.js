@@ -1,9 +1,9 @@
 const express = require('express')
 const bodyParser = require('body-parser')
 const { ApolloServer } = require('apollo-server-express')
-const { typeDefs, resolvers} = require('./schema')
+const schema = require('./schema')
 
-const server = new ApolloServer({ typeDefs, resolvers })
+const server = new ApolloServer(schema)
 const app = express()
 server.applyMiddleware({ app })
 

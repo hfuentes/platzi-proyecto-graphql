@@ -38,6 +38,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         "npm:1.19.0"
       ],
       [
+        "casual",
+        "npm:1.6.2"
+      ],
+      [
         "express",
         "npm:4.17.1"
       ],
@@ -63,6 +67,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [
             ["apollo-server-express", "virtual:e6523c9d8db8cf8bef8c4c983c73fd86cf8f1086fff69a8fcd2a9d4ae3a5f325038e663a4f7e4c8731c64c640b365d2044da488b6efabe11f4920cd0f5fb9445#npm:2.16.1"],
             ["body-parser", "npm:1.19.0"],
+            ["casual", "npm:1.6.2"],
             ["express", "npm:4.17.1"],
             ["graphql", "npm:15.3.0"],
             ["graphql-tools", "virtual:e6523c9d8db8cf8bef8c4c983c73fd86cf8f1086fff69a8fcd2a9d4ae3a5f325038e663a4f7e4c8731c64c640b365d2044da488b6efabe11f4920cd0f5fb9445#npm:6.0.18"],
@@ -2448,6 +2453,17 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD",
         }]
       ]],
+      ["casual", [
+        ["npm:1.6.2", {
+          "packageLocation": "./.yarn/cache/casual-npm-1.6.2-f68725869c-11209db04a.zip/node_modules/casual/",
+          "packageDependencies": [
+            ["casual", "npm:1.6.2"],
+            ["mersenne-twister", "npm:1.1.0"],
+            ["moment", "npm:2.27.0"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
       ["chalk", [
         ["npm:2.4.2", {
           "packageLocation": "./.yarn/cache/chalk-npm-2.4.2-3ea16dd91e-22c7b7b5bc.zip/node_modules/chalk/",
@@ -4478,6 +4494,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD",
         }]
       ]],
+      ["mersenne-twister", [
+        ["npm:1.1.0", {
+          "packageLocation": "./.yarn/cache/mersenne-twister-npm-1.1.0-d969b9d094-e95c91184c.zip/node_modules/mersenne-twister/",
+          "packageDependencies": [
+            ["mersenne-twister", "npm:1.1.0"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
       ["methods", [
         ["npm:1.1.2", {
           "packageLocation": "./.yarn/cache/methods-npm-1.1.2-92f6fdb39b-450e4ea0fd.zip/node_modules/methods/",
@@ -4580,6 +4605,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/mkdirp-npm-1.0.4-37f6ef56b9-1aa3a6a2d7.zip/node_modules/mkdirp/",
           "packageDependencies": [
             ["mkdirp", "npm:1.0.4"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["moment", [
+        ["npm:2.27.0", {
+          "packageLocation": "./.yarn/cache/moment-npm-2.27.0-0e670d438d-72d9a7d8db.zip/node_modules/moment/",
+          "packageDependencies": [
+            ["moment", "npm:2.27.0"]
           ],
           "linkType": "HARD",
         }]
@@ -5064,6 +5098,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["platzi-proyecto-graphql", "workspace:."],
             ["apollo-server-express", "virtual:e6523c9d8db8cf8bef8c4c983c73fd86cf8f1086fff69a8fcd2a9d4ae3a5f325038e663a4f7e4c8731c64c640b365d2044da488b6efabe11f4920cd0f5fb9445#npm:2.16.1"],
             ["body-parser", "npm:1.19.0"],
+            ["casual", "npm:1.6.2"],
             ["express", "npm:4.17.1"],
             ["graphql", "npm:15.3.0"],
             ["graphql-tools", "virtual:e6523c9d8db8cf8bef8c4c983c73fd86cf8f1086fff69a8fcd2a9d4ae3a5f325038e663a4f7e4c8731c64c640b365d2044da488b6efabe11f4920cd0f5fb9445#npm:6.0.18"],

@@ -2041,6 +2041,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"casual@npm:^1.6.2":
+  version: 1.6.2
+  resolution: "casual@npm:1.6.2"
+  dependencies:
+    mersenne-twister: ^1.0.1
+    moment: ^2.15.2
+  checksum: 11209db04a7f42badcf1c518e4231a1857d279433314255dc273e573aca799516a5f5e2cb0012861eecb304f7b1da0dc22a2b249d69b48a97d9ac78606de23d2
+  languageName: node
+  linkType: hard
+
 "chalk@npm:^2.0.0":
   version: 2.4.2
   resolution: "chalk@npm:2.4.2"
@@ -3808,6 +3818,13 @@ fsevents@~2.1.2:
   languageName: node
   linkType: hard
 
+"mersenne-twister@npm:^1.0.1":
+  version: 1.1.0
+  resolution: "mersenne-twister@npm:1.1.0"
+  checksum: e95c91184cd42cf7e4d86722a4f322fd70e95b9bc164b96409e2280abea38c9f82205611c07b5d964cd8d5220633d8f0266e8f5a52b951eea25f02d75aaaf275
+  languageName: node
+  linkType: hard
+
 "methods@npm:~1.1.2":
   version: 1.1.2
   resolution: "methods@npm:1.1.2"
@@ -3898,6 +3915,13 @@ fsevents@~2.1.2:
   bin:
     mkdirp: bin/cmd.js
   checksum: 1aa3a6a2d7514f094a91329ec09994f5d32d2955a4985ecbb3d86f2aaeafc4aa11521f98d606144c1d49cd9835004d9a73342709b8c692c92e59eacf37412468
+  languageName: node
+  linkType: hard
+
+"moment@npm:^2.15.2":
+  version: 2.27.0
+  resolution: "moment@npm:2.27.0"
+  checksum: 72d9a7d8dba59e3d538440cdc0b59fa895b123361e370be231896478aaf157a484355ce32bd8daf6f731d6d1636d3a67ecb67531e536e093ca18b43e0cbae194
   languageName: node
   linkType: hard
 
@@ -4324,6 +4348,7 @@ fsevents@~2.1.2:
   dependencies:
     apollo-server-express: ^2.16.1
     body-parser: ^1.19.0
+    casual: ^1.6.2
     express: ^4.17.1
     graphql: ^15.3.0
     graphql-tools: ^6.0.18
