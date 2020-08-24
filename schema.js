@@ -4,7 +4,6 @@ const casual = require('casual')
 const SHOW_MOCKS = true
 
 const typeDefs = gql`
-
     type Curso {
         id: ID!
         titulo: String!
@@ -13,7 +12,6 @@ const typeDefs = gql`
         rating: Float @deprecated(reason: "No creemos más en los puntajes de cursos!")
         comentarios: [Comentario]
     }
-
     type Profesor {
         id: ID!
         nombre: String!
@@ -21,18 +19,15 @@ const typeDefs = gql`
         genero: Genero
         cursos: [Curso]
     }
-
     enum Genero {
         MASCULINO
         FEMENINO
     }
-
     type Comentario {
         id: ID!
         nombre: String!
         cuerpo: String!
     }
-
     type Query {
         cursos: [Curso]
         profesores: [Profesor]
@@ -85,4 +80,11 @@ getMocks = (show) => {
     }
 }
 
-module.exports = { typeDefs, resolvers, mocks: getMocks(SHOW_MOCKS) }
+module.exports = {
+    typeDefs, resolvers, mocks: getMocks(SHOW_MOCKS), logger: {
+        debug: (msg) => confirm.debug(msg),
+        info: (msg) => confirm.info(msg),
+        warn: (msg) => confirm.warn(msg),
+        error: (msg) => confirm.error(msg)
+    }
+}

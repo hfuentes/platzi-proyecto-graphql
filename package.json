@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "author": "Héctor Fuentes",
   "scripts": {
-    "start": "nodemon index.js"
+    "start": "nodemon index.js",
+    "db:migrate": "knex migrate:latest --knexfile=db/knexfile.js",
+    "db:seed": "knex seed:run --knexfile=db/knexfile.js"
   },
   "dependencies": {
     "apollo-server-express": "^2.16.1",
@@ -11,7 +13,10 @@
     "casual": "^1.6.2",
     "express": "^4.17.1",
     "graphql": "^15.3.0",
-    "graphql-tools": "^6.0.18"
+    "graphql-tools": "^6.0.18",
+    "knex": "^0.21.5",
+    "objection": "^2.2.3",
+    "sqlite3": "^5.0.0"
   },
   "devDependencies": {
     "nodemon": "^2.0.4"
