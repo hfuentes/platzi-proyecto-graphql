@@ -9,7 +9,19 @@ module.exports = {
         profesor: (_, args) => Profesor.query().findById(args.id).eager('cursos')
     },
     Mutation: {
-        profesorAdd: (_, args) => Profesor.query().insert(args.profesor),
-        profesorEdit: (_, args) => Profesor.query().patchAndFetchById(args.profesorId, args.profesor)
+        profesorAdd: async (_, args) => await Profesor.query().insert(args.profesor),
+        profesorEdit: async (_, args) => await Profesor.query().patchAndFetchById(args.profesorId, args.profesor),
+        profesorDelete: async (_, args) => {
+            let profesor = await Profesor.query().findById(args.profesorId)
+            await Profesor.query().deleteById(args.profesorId)
+            return profesor
+        },
+        cursoAdd: async (_, args) => await Curso.query().insert(args.curso),
+        cursoEdit: async (_, args) => await Curso.query().patchAndFetchById(args.cursoId, args.curso),
+        cursoDelete: async (_, args) => {
+            let curso = await Curso.query().findById(args.cursoId)
+            await Curso.query().deleteById(args.cursoId)
+            return curso
+        }
     }
 }
